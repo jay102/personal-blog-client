@@ -30,9 +30,9 @@ const articleRepository = (axios) => {
     });
   }
 
-  const getArticlesByTag = (tag, pageNumber) => {
+  const getArticlesByTag = (tag, offset, pageSize) => {
     return new Promise((resolve, reject) => {
-      axios.get(`/tags/${tag}`)
+      axios.get(`/tags/${tag}/${offset}/${pageSize}`)
         .then(res => {
           localStorage.setItem('tag_articles', res.data.articles);
           resolve(res.data.articles)

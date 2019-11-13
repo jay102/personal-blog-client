@@ -4,6 +4,7 @@ import axios from 'axios'
 import Articles from '../Articles/Article'
 import { TemplateFiles } from '../../../App'
 import articles_service from '../../../services/articles.service'
+import { Container, Link, lightColors, darkColors } from 'react-floating-action-button'
 
 const repository = articles_service(axios)
 class TagsContainer extends Component {
@@ -11,33 +12,41 @@ class TagsContainer extends Component {
     super(props)
     this.state = {
       articles: [] || localStorage.getItem('tag_articles'),
-      pageNumber: 1
+      offset: 0,
+      pageSize: 10
     }
     this.tag = this.props.match.params.tag
   }
 
 
   componentDidMount() {
-    this.getArticle(this.tag, this.state.pageNumber);
+    const { offset, pageSize } = this.state;
+    this.getArticle(this.tag, offset, pageSize);
+  }
+  componentDidUpdate(prevProps, prevState) {
+    const { offset, pageSize } = this.state;
+    if (this.state.offset !== prevState.offset) {
+      this.getArticle(this.tag, offset, pageSize);
+    }
   }
   increment = (e) => {
     e.preventDefault();
     this.setState((prevState, props) => ({
-      pageNumber: ++prevState.pageNumber
+      offset: prevState.offset + 10,
     }));
-    this.getArticle(this.tag, this.state.pageNumber);
+
   }
   decrement = (e) => {
     e.preventDefault();
     this.setState((prevState, props) => ({
-      pageNumber: --prevState.pageNumber
+      offset: prevState.offset - 10,
     }));
-    this.getArticle(this.tag, this.state.pageNumber);
+
   }
 
-  getArticle = async (tag, pageNumber) => {
+  getArticle = async (tag, offset, pageSize) => {
     try {
-      const articles = await repository.getArticlesByTag(tag, pageNumber)
+      const articles = await repository.getArticlesByTag(tag, offset, pageSize)
       this.setState({ articles })
     } catch (err) {
       if (err.response) {
@@ -57,12 +66,22 @@ class TagsContainer extends Component {
       );
     })
     return (
-      <TagsView
-        paginate={{ increment: this.increment, decrement: this.decrement }}
-        pageNumber={this.state.pageNumber}
-        Posts={Posts}
-        tag={this.tag}
-        {...this.state} />
+      <>
+        <Container>
+          <Link
+            tooltip="Home"
+            href="/"
+            icon="fas fa-home"
+            styles={{ backgroundColor: darkColors.grey, color: lightColors.white }}
+          />
+        </Container>
+        <TagsView
+          paginate={{ increment: this.increment, decrement: this.decrement }}
+          offset={this.state.offset}
+          Posts={Posts}
+          tag={this.tag}
+          {...this.state} />
+      </>
     );
   }
 }
