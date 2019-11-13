@@ -99,8 +99,8 @@ class AllTagsContainer extends Component {
     const list = tags.map(tags => {
       return (
         <li className="list-group-item" key={tags.id}>{tags.tag}
-          <a href="#"><i className="fas fa-marker edit_icon" onClick={() => this.forEdit(tags)} data-toggle="modal" data-target="#edit_tag"></i></a>
-          <a href="#"><i className="far fa-trash-alt delete_icon" onClick={(e) => this.deleteTag(e, tags.id)}></i></a>
+          <a href="javascript:;"><i className="fas fa-marker edit_icon" onClick={() => this.forEdit(tags)} data-toggle="modal" data-target="#edit_tag"></i></a>
+          <a href="javascript:;"><i className="far fa-trash-alt delete_icon" onClick={(e) => this.deleteTag(e, tags.id)}></i></a>
         </li>
       );
     })
