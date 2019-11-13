@@ -3,7 +3,7 @@
 # These rules will change if you change your site’s custom domains or HTTPS settings
 
 # Redirect domain aliases to primary domain
-http://www.blog.jaycodes.com/* http://blog.jaycodes.com/:splat 301!
+https://www.blog.jaycodes.com/* https://blog.jaycodes.com/:splat 301!
 
 # Optional: Redirect default Netlify subdomain to primary domain
-http://jaycodesblog.netlify.com/* http://blog.jaycodes.com/:splat 301!
+https://jaycodesblog.netlify.com/* https://blog.jaycodes.com/:splat 301!
