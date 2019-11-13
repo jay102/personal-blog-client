@@ -20,7 +20,7 @@ const ContactView = (props) => {
         <div className="row">
           <div className="col-lg-8 col-md-10 mx-auto">
             <p>{props.text}</p>
-            <form name="sentMessage" id="contactForm" noValidate>
+            <form name="contactform" id="contactForm" method="POST" noValidate data-netlify="true">
               <div className="control-group">
                 <div className="form-group floating-label-form-group controls">
                   <label>Name</label>
