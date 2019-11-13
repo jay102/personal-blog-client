@@ -3,11 +3,6 @@ import { NavLink } from 'react-router-dom'
 const img = require('../../../assets/img/logo.png');
 
 class Header extends Component {
-
-    setRedirect = () => {
-        this.props.history.push('/admin/dashboard')
-    }
-
     render() {
         const user_id = localStorage.getItem('user_id');
         return (
@@ -28,9 +23,10 @@ class Header extends Component {
                             <li className="nav-item">
                                 <NavLink to="/contact" className="nav-link" href="/contact">Contact</NavLink>
                             </li>
-                            {user_id === 1 ? <li className="nav-item">
-                                <NavLink onClick={this.setRedirect} to="/admin/dashboard" className="nav-link">Dashboard</NavLink>
-                            </li> : null}
+                            {parseInt(user_id) === 1 ?
+                                <li className="nav-item">
+                                    <a href="admin/dashboard" className="nav-link">Dashboard</a>
+                                </li> : null}
                         </ul>
                     </div>
                 </div>

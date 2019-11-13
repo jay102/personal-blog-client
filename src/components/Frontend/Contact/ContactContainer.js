@@ -14,7 +14,10 @@ class ContactContainer extends Component {
             headers: { "Content-Type": "application/x-www-form-urlencoded" },
             body: this.encode({ "form-name": "contact", ...this.state })
         })
-            .then(() => alert("Success!"))
+            .then(() => {
+                alert("Success!")
+                this.setState({ name: "", email: "", phone: "", message: "" })
+            })
             .catch(error => alert(error));
 
         e.preventDefault();

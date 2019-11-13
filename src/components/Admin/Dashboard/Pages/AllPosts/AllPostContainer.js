@@ -28,7 +28,7 @@ class AllPosts extends Component {
             success: false,
             error: false,
             offset: 0,
-            pageSize: 2
+            pageSize: 10
         }
     }
     componentDidMount() {

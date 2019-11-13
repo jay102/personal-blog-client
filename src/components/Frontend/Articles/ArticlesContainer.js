@@ -13,7 +13,7 @@ class Articles extends Component {
         this.state = {
             articles: [] || localStorage.getItem('articles'),
             offset: 0,
-            pageSize: 2
+            pageSize: 10
         }
     }
     componentDidMount() {
@@ -39,13 +39,13 @@ class Articles extends Component {
     increment = (e) => {
         e.preventDefault();
         this.setState((prevState, props) => ({
-            offset: prevState.offset + 2,
+            offset: prevState.offset + 10,
         }));
     }
     decrement = (e) => {
         e.preventDefault();
         this.setState((prevState, props) => ({
-            offset: prevState.offset - 2,
+            offset: prevState.offset - 10,
         }));
     }
 
