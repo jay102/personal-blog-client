@@ -1,1 +1,3 @@
 /*    /index.html  200
+# Redirect default Netlify subdomain to primary domain
+http://jaycodesblog.netlify.com/* http://www.blog.jaycodes.com/:splat 301!
