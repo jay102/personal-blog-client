@@ -1,7 +1,7 @@
 import React from 'react';
 
 const ContactView = (props) => {
-  const { name, email, phone, message } = props;
+  const { name, email, phone, message } = props.state;
   return (
     <React.Fragment>
       <header className="masthead" style={props.mystyle}>
