@@ -97,7 +97,8 @@ class AllPosts extends Component {
         axios.delete(`/posts/${postId}`)
             .then(res => {
                 alert(res.data.message)
-                this.getPosts()
+                const { offset, pageSize } = this.state;
+                this.getPosts(offset, pageSize)
             })
             .catch(err => {
                 if (err.response) {

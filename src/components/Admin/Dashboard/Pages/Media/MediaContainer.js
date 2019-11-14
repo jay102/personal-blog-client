@@ -97,7 +97,7 @@ class Media extends Component {
         </div>
       );
     })
-    if (media.length === 0 || media === undefined) {
+    if (media === undefined) {
       return <Spinner />
     } else {
       return (
