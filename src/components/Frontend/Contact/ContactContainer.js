@@ -15,7 +15,7 @@ class ContactContainer extends Component {
             body: this.encode({ "form-name": "contact", ...this.state })
         })
             .then(() => {
-                alert("Success!")
+                alert("Message sent!")
                 this.setState({ name: "", email: "", phone: "", message: "" })
             })
             .catch(error => alert(error));
@@ -42,6 +42,7 @@ class ContactContainer extends Component {
                         header={Contact.header}
                         handleChange={this.handleChange}
                         handleSubmit={this.handleSubmit}
+                        state={this.state}
                     />
                 }}
             </TemplateFiles.Consumer>
