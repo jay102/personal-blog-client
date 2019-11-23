@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import "easymde/dist/easymde.min.css";
-import articlesRepository from '../../../../../services/articles.service'
+import articlesRepository from '../../../../../services/articles.service';
 import axios from 'axios'
 import slugify from '@sindresorhus/slugify'
 import moment from 'moment'
 import NewPostView from './NewPostView'
 
-const repository = articlesRepository(axios)
+const repository = articlesRepository(axios);
 export class NewPost extends Component {
     state = {
         url: "",
