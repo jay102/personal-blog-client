@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { NavLink, Link, withRouter } from 'react-router-dom'
+import { NavLink, withRouter } from 'react-router-dom'
 
 const iconStyle = { marginRight: "5px" }
 const activeLink = { color: "#007bff" }
@@ -9,7 +9,6 @@ class SideBar extends Component {
     const qst = window.confirm('Logout');
     if (qst) {
       localStorage.clear();
-      // this.props.history.push('/admin/login')
     }
   }
   render() {
@@ -33,6 +32,9 @@ class SideBar extends Component {
               </li>
               <li>
                 <NavLink className="nav-link" activeStyle={activeLink} to="/admin/dashboard/media"><span style={iconStyle}><i className="fas fa-images"></i></span>Media</NavLink>
+              </li>
+              <li >
+                <NavLink className="nav-link" activeStyle={activeLink} to="/admin/dashboard/users"><span style={iconStyle}><i className="fas fa-user"></i></span>Users</NavLink>
               </li>
               <li >
                 <a onClick={this.logout} className="nav-link" href="/admin/login"><span style={iconStyle}><i className="fa fa-step-forward"></i></span>Signout</a>

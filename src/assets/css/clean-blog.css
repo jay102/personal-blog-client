@@ -586,3 +586,6 @@ footer .copyright {
 .comment.card.my-4{
   border:0;
 }
+pre {
+  border-radius: 10px;
+}

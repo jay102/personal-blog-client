@@ -1,17 +1,18 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import Header from '../NavBar/header'
-import Footer from '../Footer/footer'
-import SideBar from '../SideBar/sidebar'
-import './dashboard_css.css'
+import Header from '../NavBar/header';
+import Footer from '../Footer/footer';
+import SideBar from '../SideBar/sidebar';
+import './dashboard_css.css';
 
 
 //import body contents from views
-import DashboardBody from '../../Pages/Main/content'
-import NewPost from '../../Pages/NewPost/NewPostContainer'
-import AllPosts from '../../Pages/AllPosts/AllPostContainer'
-import Tags from '../../Pages/Tags/TagsContainer'
-import Media from '../../Pages/Media/MediaContainer'
+import DashboardBody from '../../Pages/Main/content';
+import NewPost from '../../Pages/NewPost/NewPostContainer';
+import AllPosts from '../../Pages/AllPosts/AllPostContainer';
+import Tags from '../../Pages/Tags/TagsContainer';
+import Media from '../../Pages/Media/MediaContainer';
+import User from '../../Pages/User/UserContainer';
 
 class Dashboard extends Component {
     render() {
@@ -28,6 +29,7 @@ class Dashboard extends Component {
                                 <Route exact strict path="/admin/dashboard/all-posts" render={(props) => <AllPosts backendurl={this.props.backendurl} />} />
                                 <Route exact strict path="/admin/dashboard/tags" component={Tags} />
                                 <Route exact strict path="/admin/dashboard/media" component={Media} />
+                                <Route exact strict path="/admin/dashboard/users" component={User} />
                             </Switch>
                         </main>
                     </div>

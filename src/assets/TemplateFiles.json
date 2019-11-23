@@ -7,7 +7,7 @@
     "About": {
         "header": "About Me",
         "subtitle": "Wanna know some about me? Here you go.!",
-        "text": "I'm James, and i'm passionate about sofware development. I started my development career 2013 as a Java developer, i played around with Android development for a while before drifting to the web. I'm currently a Full-stack software Engineer currently working in Lagos Nigeria. I love to write about tech, reason i created this blog to talk about technology and my daily challenges with tools and newer technologies out there. I'm passionate about Nodejs,ReactJs, AngularJs amongst others. Feel free to reach out to me if you have a project you would like to discuss with me or if you believe i'm a good fit your team.",
+        "text": "I'm James, and i'm passionate about sofware development. I started my development career 2013 as a Java developer, i played around with Android development for a while before drifting to the web. I'm currently a Full-stack software Engineer currently working with a cool company in Lagos Nigeria. I love to write about tech, reason i created this blog to talk about technology and my daily challenges with tools and newer technologies out there. I'm passionate about Nodejs,ReactJs, AngularJs amongst others. Feel free to reach out to me if you have a project you would like to discuss with me or if you believe i'm a good fit your team.",
         "bg": "img/about-tester.jpg"
     },
     "Contact": {
