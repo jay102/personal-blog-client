@@ -17,7 +17,7 @@ const usersRepository = (axios) => {
 
   const addUser = async (user) => {
     return new Promise((resolve, reject) => {
-      axios.post('/user', user)
+      axios.post('/users', user)
         .then(res => {
           resolve(res.data);
         })

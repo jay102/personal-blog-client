@@ -37,7 +37,7 @@ const Post = (props) => {
             <hr />
 
             {/* <!-- Preview Image --> */}
-            <img className="img-fluid rounded" src={`${image}`} alt="featured" height="500px" width="700px" />
+            <img className="img-fluid rounded" src={`${image}`} alt="featured" height="500px" width="900px" />
             <hr />
             <ReactMarkdown
               source={props.article.body}
@@ -51,7 +51,7 @@ const Post = (props) => {
           <SideBar tags={props.tags} />
         </div>
       </div>
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 }
